@@ -5,8 +5,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide a name'],
     trim: true,
-    minLength:true,
-    maxLength:true
+    minLength:2,
+    maxLength:50
   },
   email: {
     type: String,
@@ -25,7 +25,6 @@ const userSchema = new mongoose.Schema({
 
 
 const User = mongoose.model('User', userSchema);
-
 export default User;
 
 // {name: 'John Doe', email: 'jhondoe@gmail.com', password: 'password'}
