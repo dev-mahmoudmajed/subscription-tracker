@@ -10,7 +10,7 @@ import connectDB from "./database/mongodb.js";
 // ------------------{  Importing Routes  }----------------------
 import userRouter from './Routes/user.routes.js';
 import authRouter from './Routes/auth.routes.js';
-import subscriptionRouter from './Routes/subscription.route.js';
+import subscriptionRouter from './Routes/subscription.routes.js';
 import cookieParser from 'cookie-parser';
 
 // -------------------{ Middlewares }---------------------

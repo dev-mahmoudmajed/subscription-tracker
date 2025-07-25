@@ -5,18 +5,21 @@ const errorMiddleware = (err, req, res, next) => {
     error.message = err.message;
     error.status = err.status || 500;
     console.log(err);
+
     //Mongoose bad objectid
     if (err.name === "CastError") {
       const message = "Resource not found";
       error = new Error(message);
       error.statusCode = 404;
     }
+
     //Mongoose duplicate key
     if (err.code === 11000) {
       const message = "Duplicate field value";
             error = new Error(message);
       error.statusCode = 400;
     }
+    
     //Mongoose validation error
     if (err.name === "ValidationError") {
       const message = Object.values(err.errors).map(val => val.message);

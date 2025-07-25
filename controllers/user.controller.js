@@ -14,11 +14,12 @@ export const getUsers = async (req,res,next)=>{
 
 export const getUser = async (req,res,next)=>{
   try {
+    //will give all feilds but not password
     const user = await User.findById(req.params.id).select('-password');
     if(!user){
       const error = new error('user not found');
       error.statusCode=404
-      throw
+      throw error;
     }
     
     res.status(200).json({

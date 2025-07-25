@@ -19,3 +19,15 @@ npx express-generator --no-view --git ./
 [httpie](https://httpie.io/app)
 [insomnia](https://insomnia.rest/)
 
+## To Start work with project
+you will create evv file called `.env.development.local` or `.env.production.local`
+**have next vars**
+```
+PORT=""
+NODE_ENV=""
+DB_URI=""
+JWT_SECRET=""
+JWT_EXPIRES_IN=""
+```
+**Generate JWT_SECRET with next easy command**
+`node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`
